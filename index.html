@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Birthday Surprise</title>
   <style>
     body {
@@ -15,44 +16,42 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-    }#heart {
-  font-size: 50px;
-  animation: beat 1s infinite;
-}
+    }
 
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.3); }
-}
+    #sparkle {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
 
-#message {
-  color: #AD1457;
-  font-size: 20px;
-  text-align: center;
-  margin: 30px;
-  max-width: 90%;
-}
+    #message {
+      color: #AD1457;
+      font-size: 20px;
+      text-align: center;
+      margin: 30px;
+      max-width: 90%;
+    }
 
-#startBtn {
-  background-color: #F06292;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+    #startBtn {
+      background-color: #F06292;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-#startBtn:hover {
-  background-color: #EC407A;
-}
-
+    #startBtn:hover {
+      background-color: #EC407A;
+    }
   </style>
 </head>
 <body>
-  <div id="heart">❤️</div>
+  <div id="sparkle">✨</div>
   <div id="message"></div>
-  <button id="startBtn">Click for Surprise 💝</button>  <script>
+  <button id="startBtn">Click for Surprise 💝</button>
+
+  <script>
     const messages = [
       "Hey...",
       "It's your birthday, and I couldn't stay silent.",
@@ -77,8 +76,13 @@
           i++;
         } else {
           clearInterval(interval);
+          // Final pop-up
+          setTimeout(() => {
+            alert("🌸 Happy Birthday once again! 🌸");
+          }, 1000);
         }
       }, 2500);
     };
-  </script></body>
+  </script>
+</body>
 </html>
