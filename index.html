@@ -20,12 +20,8 @@
     }
 
     #sparkle {
-      font-size: 40px;
-      position: fixed;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
     #message {
@@ -34,7 +30,6 @@
       margin: 30px;
       max-width: 90%;
       line-height: 1.6;
-      white-space: pre-wrap;
     }
 
     #startBtn {
@@ -62,12 +57,12 @@
     const messages = [
       "Happiest Birthday, Ilsa! ✨",
       "I hope you keep smiling —",
-      "keep enjoying, and achieve all your goals in life, InshaAllah.",
+      "Keep enjoying, and achieve all your goals in life.",
       "",
-      "Also… I want to apologize if anything I said ever hurt you.",
-      "I don’t even know if you read those last two messages — but anyway...",
+      "And yeah... my apologies — I shouldn’t have reacted that way.",
+      "I don’t even know if you read those messages but anyways!",
       "",
-      "Since it’s your special day, enjoy it to the fullest. ✨"
+      "Since it’s your special day, enjoy it to the fullest! ✨"
     ];
 
     const msgDiv = document.getElementById('message');
@@ -78,7 +73,7 @@
       let i = 0;
       const interval = setInterval(() => {
         if (i < messages.length) {
-          msgDiv.innerHTML += messages[i] + "<br><br>";
+          msgDiv.textContent = messages[i];
           i++;
         } else {
           clearInterval(interval);
