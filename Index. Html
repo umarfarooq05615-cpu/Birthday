@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFD6E8;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }#heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+#message {
+  color: #AD1457;
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+  max-width: 90%;
+}
+
+#startBtn {
+  background-color: #F06292;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#startBtn:hover {
+  background-color: #EC407A;
+}
+
+  </style>
+</head>
+<body>
+  <div id="heart">❤️</div>
+  <div id="message"></div>
+  <button id="startBtn">Click for Surprise 💝</button>  <script>
+    const messages = [
+      "Hey...",
+      "It's your birthday, and I couldn't stay silent.",
+      "We don't talk now, and maybe that's okay.",
+      "But I still remember the smile you had.",
+      "So here I am, just to say one thing—",
+      "🎂 Happy Birthday 🎂",
+      "No drama, no pressure.",
+      "Just a simple wish from someone who once cared a lot.",
+      "Hope you smile today. That’s all."
+    ];
+
+    const msgDiv = document.getElementById('message');
+    const btn = document.getElementById('startBtn');
+
+    btn.onclick = () => {
+      btn.style.display = 'none';
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < messages.length) {
+          msgDiv.textContent = messages[i];
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 2500);
+    };
+  </script></body>
+</html>
