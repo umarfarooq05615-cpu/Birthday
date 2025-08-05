@@ -4,64 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Birthday Surprise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #FFD6E8;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to top right, #ffe4ec, #fff0f5);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      flex-direction: column;
     }
 
     #sparkle {
-      font-size: 50px;
-      margin-bottom: 20px;
+      font-size: 48px;
+      animation: sparkle-blink 1.2s infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes sparkle-blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(1.4); }
     }
 
     #message {
       color: #AD1457;
       font-size: 20px;
       text-align: center;
-      margin: 30px;
+      margin: 20px;
       max-width: 90%;
+      line-height: 1.6;
     }
 
     #startBtn {
-      background-color: #F06292;
+      background-color: #ff5c8d;
       color: white;
       border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 50px;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
     }
 
     #startBtn:hover {
-      background-color: #EC407A;
+      background-color: #e9487c;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <div id="sparkle">✨</div>
   <div id="message"></div>
-  <button id="startBtn">Click for Surprise 💝</button>
+  <button id="startBtn">Click Here 💝</button>
 
   <script>
     const messages = [
-      "Hey...",
-      "It's your birthday, and I couldn't stay silent.",
-      "We don't talk now, and maybe that's okay.",
-      "But I still remember the smile you had.",
-      "So here I am, just to say one thing—",
-      "🎂 Happy Birthday 🎂",
-      "No drama, no pressure.",
-      "Just a simple wish from someone who once cared a lot.",
-      "Hope you smile today. That’s all."
+      "Happiest Birthday, Ilsa! ✨",
+      "I hope you keep smiling —",
+      "keep enjoying, and achieve all your goals in life, InshaAllah.",
+      "",
+      "Also... I want to apologize if anything I said ever hurt you.",
+      "I don’t even know if you read those last two messages — but anyway...",
+      "",
+      "Since it’s your special day, enjoy it to the fullest.",
+      "Mashallah ✨"
     ];
 
     const msgDiv = document.getElementById('message');
@@ -72,14 +83,10 @@
       let i = 0;
       const interval = setInterval(() => {
         if (i < messages.length) {
-          msgDiv.textContent = messages[i];
+          msgDiv.innerHTML = messages[i];
           i++;
         } else {
           clearInterval(interval);
-          // Final pop-up
-          setTimeout(() => {
-            alert("🌸 Happy Birthday once again! 🌸");
-          }, 1000);
         }
       }, 2500);
     };
