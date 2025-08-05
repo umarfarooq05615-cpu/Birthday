@@ -23,7 +23,8 @@
       font-size: 40px;
       position: fixed;
       top: 15px;
-      right: 15px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 10;
     }
 
@@ -33,6 +34,7 @@
       margin: 30px;
       max-width: 90%;
       line-height: 1.6;
+      white-space: pre-wrap;
     }
 
     #startBtn {
@@ -76,7 +78,7 @@
       let i = 0;
       const interval = setInterval(() => {
         if (i < messages.length) {
-          msgDiv.textContent = messages[i];
+          msgDiv.innerHTML += messages[i] + "<br><br>";
           i++;
         } else {
           clearInterval(interval);
